@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Portfolio Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="gradient">Interactive Portfolio Builder</h1>
+
+    <div class="flex">
+      <!-- ===== Form Section ===== -->
+      <form id="portfolio-form" autocomplete="off">
+        <label>Name: <input id="name" type="text"></label>
+        <label>Title: <input id="title" type="text"></label>
+        <label>Location: <input id="location" type="text"></label>
+        <label>Email: <input id="email" type="text"></label>
+        <label>Bio: <textarea id="bio"></textarea></label>
+        <label>Avatar Image URL: <input id="avatar" type="text" placeholder="Paste an image link"></label>
+
+        <hr>
+        <h3>Skills</h3>
+        <div>
+          <input id="skill-input" type="text" placeholder="Add a skill and press Enter">
+          <button type="button" class="action-btn" onclick="addSkill()">Add Skill</button>
+        </div>
+        <div id="skills-list"></div>
+
+        <hr>
+        <h3>Projects</h3>
+        <input id="project-title" type="text" placeholder="Project Title">
+        <input id="project-link" type="text" placeholder="Project Link (optional)">
+        <textarea id="project-desc" placeholder="Project Description"></textarea>
+        <button type="button" class="action-btn" onclick="addProject()">Add Project</button>
+        <div id="projects-list"></div>
+
+        <hr>
+        <h3>Social Links</h3>
+        <input id="github" type="text" placeholder="GitHub URL">
+        <input id="linkedin" type="text" placeholder="LinkedIn URL">
+        <input id="twitter" type="text" placeholder="Twitter URL">
+
+        <hr>
+        <button type="button" class="download-btn" onclick="downloadPortfolio()">📄 Download as PDF</button>
+        <button type="button" class="action-btn" onclick="toggleTheme()">🌗 Toggle Theme</button>
+      </form>
+
+      <!-- ===== Preview Section ===== -->
+      <div id="preview"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
